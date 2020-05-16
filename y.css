@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+.contain {
+  position: absolute;
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.contain:hover .top:before, .contain:hover .top:after, .contain:hover .bottom:before, .contain:hover .bottom:after, .contain:active .top:before, .contain:active .top:after, .contain:active .bottom:before, .contain:active .bottom:after {
+  margin-left: 200px;
+  transform-origin: -200px 50%;
+  transition-delay: 0s;
+}
+.contain:hover .middle, .contain:active .middle {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+.top:before, .top:after, .bottom:before, .bottom:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 200vmax;
+  height: 200vmax;
+  top: 50%;
+  left: 50%;
+  margin-top: -100vmax;
+  transform-origin: 0 50%;
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  z-index: 10;
+  opacity: 0.65;
+  transition-delay: 0.2s;
+}
+
+.top:before {
+  transform: rotate(45deg);
+  background: #e46569;
+}
+.top:after {
+  transform: rotate(135deg);
+  background: #ecaf81;
+}
+
+.bottom:before {
+  transform: rotate(-45deg);
+  background: #60b8d4;
+}
+.bottom:after {
+  transform: rotate(-135deg);
+  background: #3745b5;
+}
+
+.middle {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  transition-delay: 0s;
+  color: #333;
+}
+.middle input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 1px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+.butt {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.butt:hover {background-color: #3e8e41}
+
+.butt:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
